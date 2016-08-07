@@ -26,7 +26,7 @@
 }());
 $(function(){
 	String.format=function(){var h=arguments,j=h.length;if(j==0){return""}if(j==1){return h[0]}var k=/{(\d+)?}/g,g,l;if(h[1] instanceof Array){g=h[1];l=h[0].replace(k,function(a,b){return g[parseInt(b)]})}else{g=h;l=h[0].replace(k,function(a,b){return g[parseInt(b)+1]})}return l};
-	
+
 	var mySwiper = null;
 	var myScrollIndex = null;
 	var myScroll = null;
@@ -141,7 +141,7 @@ $(function(){
 		myScroll.scrollTo(0,-27*window.base);
 	});
 	$('.tab_nav_pic').click(function(){
-		$('.tab_nav_video').removeClass().addClass('tab_nav_video'); 
+		$('.tab_nav_video').removeClass().addClass('tab_nav_video');
 		$(this).removeClass().addClass('tab_nav_pic active');
 		$('.tab_con_video').hide();
 		$('.tab_con_pic').show();
@@ -177,7 +177,7 @@ $(function(){
 
 	$('.js_list').click(function(){
 		// $.post('', {}, function(resp) {
-			resp ={data:[{name:'xxx',tel:'18833336666'}]} 
+			resp ={data:[{name:'xxx',tel:'18833336666'}]}
 			if(resp.errcode != 0){
 				my_notify('网络异常，请稍后重试');
 				return;
@@ -207,18 +207,18 @@ $(function(){
 		}else{
 			$(this).closest('.layer').hide();
 		}
-		
+
 		if(myScroll){
 			myScroll.destroy();
 			myScroll = null;
 		}
 		initScroll( '.scrollWrapperIndex' );
-		$(".indicator").css({ 
+		$(".indicator").css({
 			'-webkit-transform':'rotate(3deg)',
 			'-webkit-transition':'none'
 		});
 	});
-	
+
 	$('input[type=radio]').click(function(){
 		$('input[type=radio]').removeClass();
 		$(this).addClass('checked');
@@ -240,7 +240,7 @@ $(function(){
 		var data;
 		if($('.checked').val()=='yes'){
 			yuyue = true;
-			if(!( yuyue && name && tel && province && city && agency && model )){
+			if(!( yuyue && name && tel && province && city  && model )){
 				my_notify('请填写完整信息');
 				return;
 			}
@@ -350,7 +350,7 @@ $(function(){
 			$("#page4 .mask,#page4 .tip").hide();
 		},1200);
 	});
-	
+
 	// 长按播放视频
 	var activeIndex = 0;
 	var timer = null;
@@ -409,7 +409,7 @@ $(function(){
 	var times = 0;
 	var baseDeg = 360/37;
 	var tempDeg = 3;
-	
+
 	$('.js_bet').click(function(){
 		var bet_point = $('select').val();
 		if( bet_point == '' ){
@@ -491,4 +491,4 @@ $(function(){
 		$(this).hide();
 	})
 // test
-})	
+})
